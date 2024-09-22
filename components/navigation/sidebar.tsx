@@ -21,8 +21,10 @@ interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void; 
 }
+type RouteMapKeys = '/dashboard' | '/courses' | '/schedule' | '/course-advisor' | '/grade' | '/messages' | '/assignments' | '/notifications' | '/settings' | '/support';
 
-const navItems = [
+// Update your navItems array to be typed with RouteMapKeys
+const navItems: Array<{ icon: React.ReactNode, label: string, href: RouteMapKeys }> = [
   { icon: <LayoutDashboardIcon className="h-5 w-5" />, label: "Dashboard", href: "/dashboard" },
   { icon: <BookOpenIcon className="h-5 w-5" />, label: "Courses", href: "/courses" },
   { icon: <CalendarIcon className="h-5 w-5" />, label: "Schedule", href: "/schedule" },
@@ -33,7 +35,7 @@ const navItems = [
   { icon: <BellIcon className="h-5 w-5" />, label: "Notifications", href: "/notifications" },
   { icon: <SettingsIcon className="h-5 w-5" />, label: "Settings", href: "/settings" },
   { icon: <HelpCircleIcon className="h-5 w-5" />, label: "Help & Support", href: "/support" },
-]
+];
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   return (
@@ -49,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
               key={item.label}
               icon={item.icon}
               label={item.label}
-              href={item.href}
+              href={item.href  as RouteMapKeys}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
             />
