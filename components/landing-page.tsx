@@ -92,7 +92,7 @@ const LandingPage: React.FC = () => {
             {[1, 2, 3].map((i) => (
               <Card key={i}>
                 <CardContent className="p-6">
-                  <p className="mb-4">"Grade Watch has transformed my learning experience. The courses are engaging and the instructors are top-notch!"</p>
+                  <p className="mb-4">&quot;Grade Watch has transformed my learning experience. The courses are engaging and the instructors are top-notch!&quot;</p>
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-gray-300 rounded-full mr-4"></div>
                     <div>
